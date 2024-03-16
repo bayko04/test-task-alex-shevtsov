@@ -1,0 +1,86 @@
+%ralewayH1 {
+    font-family: raleway;
+    font-weight: 600;
+    font-size: 65px;
+    line-height: 35px;
+    color: #fff;
+}
+
+%ralewayH2 {
+    font-family: raleway;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 35px;
+    color: #fff;
+}
+
+%ralewayT1 {
+    font-family: raleway;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 35px;
+    color: #fff;
+}
+
+%ralewayT2 {
+    font-family: raleway;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 35px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+// ---------
+
+%montsT1 {
+    font-family: monts;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 41px;
+    color: #fff;
+}
+
+%montsT2 {
+    font-family: monts;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 41px;
+    color: #fff;
+}
+
+%montsT3 {
+    font-family: monts;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 41px;
+    color: rgba(255, 255, 255, 1);
+}
+
+// -------
+
+@keyframes toRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes toLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes toDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

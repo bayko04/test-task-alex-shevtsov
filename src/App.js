@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react"
+import Header from "./components/Header"
+import MainPage from "./components/MainPage"
+import OrderCallback from "./components/OrderCallback"
+import "./App.scss"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [sideBar, setSideBar] = useState(false)
+    const [successForm, setSuccessForm] = useState(false)
+
+    const toggleSideBar = () => {
+        if (sideBar) {
+            setSideBar(false)
+            document.body.style.overflow = "auto"
+        } else {
+            setSideBar(true)
+            document.body.style.overflow = "hidden"
+        }
+    }
+
+    const handleSuccesMessage = (value) => {
+        setSuccessForm(value)
+    }
+
+    return (
+        <div className="app">
+            <div className="container">
+                <Header />
+                <MainPage toggleSideBar={toggleSideBar} />
+
+                {sideBar && (
+                    <OrderCallback
+                        toggleSideBar={toggleSideBar}
+                        handleSuccess={handleSuccesMessage}
+                        successForm={successForm}
+                    />
+                )}
+
+                <div className={`${sideBar ? "app__blur" : ""}`}></div>
+            </div>
+        </div>
+    )
 }
 
-export default App;
+export default App

@@ -1,0 +1,127 @@
+.main-page {
+    &__left-side {
+        position: relative;
+        z-index: 2;
+        animation: toRight 1.4s ease;
+    }
+
+    &__title {
+        @extend %ralewayH1;
+        text-transform: uppercase;
+        line-height: 87px;
+        margin: 175px 0 53px 0;
+    }
+
+    &__text {
+        @extend %ralewayT2;
+        max-width: 675px;
+        border-left: 1px solid #fff;
+        line-height: 24px;
+        padding: 0 0 0 24px;
+
+        &.sm {
+            display: none;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        margin: 64px 0 112px;
+        gap: 40px;
+
+        &.sm {
+            display: none;
+        }
+    }
+
+    &__statistics {
+        display: flex;
+        gap: 230px;
+
+        &.sm {
+            display: none;
+        }
+    }
+
+    &__right-side {
+        position: absolute;
+        right: 211px;
+        bottom: 0;
+        z-index: 1;
+        overflow: hidden;
+
+        & img {
+            animation: toLeft 1.4s ease;
+        }
+    }
+}
+
+@media (max-width: 1700px) {
+    .main-page__right-side {
+        right: 0px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main-page__right-side {
+        right: -180px;
+    }
+
+    .main-page__title {
+        font-size: 40px;
+        line-height: 65px;
+    }
+
+    .main-page__text {
+        font-size: 14px;
+        padding: 0 0 0 7px;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-page__right-side {
+        right: -100px;
+
+        & img {
+            height: 492px;
+        }
+    }
+
+    .main-page {
+        &__title {
+            font-size: 25px;
+            line-height: 33px;
+            margin: 65px 0 35px;
+        }
+
+        &__text {
+            display: none;
+
+            &.sm {
+                font-size: 11px;
+                line-height: 16px;
+                display: block;
+            }
+        }
+
+        &__buttons {
+            display: none;
+            margin: 55px 0 92px;
+
+            &.sm {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        &__statistics {
+            display: none;
+
+            &.sm {
+                display: flex;
+                gap: 45px;
+            }
+        }
+    }
+}

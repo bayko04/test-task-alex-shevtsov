@@ -1,0 +1,123 @@
+.my-btn {
+    cursor: pointer;
+    display: flex;
+
+    .my-btn__text {
+        width: 308px;
+        height: 71px;
+        position: relative;
+        user-select: none;
+
+        & p {
+            position: absolute;
+            top: 50%;
+            left: 24px;
+            transform: translateY(-50%);
+            @extend %ralewayT1;
+        }
+
+        // Стили для кнопок
+        &.white {
+            background: #fff;
+
+            & p {
+                color: rgba(11, 52, 97, 1);
+            }
+        }
+
+        &.transp {
+            background: transparent;
+            border: 1px solid #fff;
+            border-right: 0;
+
+            & p {
+                color: #fff;
+            }
+        }
+    }
+
+    .my-btn__arrow {
+        width: 72px;
+        height: 71px;
+        border-left: 1px solid #000;
+        position: relative;
+
+        & svg {
+            position: absolute;
+            right: 13px;
+            bottom: 13px;
+        }
+
+        // Стили кнопок
+        &.white {
+            background: #fff;
+            border-left: 1px solid rgba(11, 52, 97, 1);
+
+            & svg path {
+                stroke: rgba(11, 52, 97, 1);
+            }
+        }
+
+        &.transp {
+            background: transparent;
+            border: 1px solid #fff;
+
+            & svg path {
+                stroke: white;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .my-btn__text.white,
+    .my-btn__text.transp {
+        width: 150px;
+        height: 50px;
+
+        & p {
+            font-size: 14px;
+            line-height: 23px;
+        }
+    }
+
+    .my-btn__arrow.white,
+    .my-btn__arrow.transp {
+        width: 50px;
+        height: 50px;
+
+        & svg {
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .my-btn__text.white,
+    .my-btn__text.transp {
+        & p {
+            font-size: 9px;
+            line-height: 12px;
+        }
+    }
+
+    .my-btn__text.white,
+    .my-btn__text.transp {
+        width: 100px;
+        height: 30px;
+    }
+
+    .my-btn__arrow.white,
+    .my-btn__arrow.transp {
+        width: 30px;
+        height: 30px;
+
+        & svg {
+            bottom: 5px;
+            right: 5px;
+            width: 8px;
+            height: 8px;
+        }
+    }
+}

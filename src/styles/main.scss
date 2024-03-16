@@ -1,0 +1,181 @@
+// Суперсила=Импорт
+// Позволяет подключать другие css файлы
+@import "null.scss";
+
+
+
+
+
+
+
+
+
+
+
+
+// Суперсила=Переменные
+// Создает значение для свойств (для краткости)
+// В начале ставится $ затем названия и занчение $fs: 30px;
+$fs: 30px;
+$bg: #DD2138;
+$fw600: 600;
+
+.power1 {
+	font-size: $fs;
+	background: $bg;
+	font-weight: $fw600;
+}
+
+
+
+
+
+
+
+
+
+
+// Суперсила=Шаблоны
+// Создает шаблон в который можно вписывать различные
+// параметры и ипсользовать их под одним именем
+// ПРИМЕР: 
+%Hleb {
+	font-size: 20px;
+	background: silver;
+	font-style: italic;
+	font-weight: normal;
+	margin-top: 10px;
+}
+// Также вместо "%" можно ипсользовать "."
+// Различие в том что "." создает отдельный класс а "%" припысывает параметры
+// ПРИМЕР:
+.Hleb2 {
+	color: aquamarine;
+}
+
+
+.power2 {
+	@extend %Hleb;
+	@extend .Hleb2;
+}
+
+
+// Значимость шаблона в коде зависит от того где он был создан
+// (имеется ввиду приоретет в коде.Он будет перезаписовать или его)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Суперсила=Миксины
+// Это смесь переменных и шаблонов
+@mixin fontz($f, $c, $mt, $bgc) {
+	font-size: $f; 
+	color: $c;
+	margin-top: $mt;
+	background: $bgc;
+}
+
+
+
+.power3 {
+	@include fontz(20px, #000, 10px, brown);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Суперсила=Вложенность
+// Можно писать внутри селектора другой селектор
+.power4 {
+	border: 1px solid #000;
+	font-size: 20px;
+	padding: 10px;
+	margin-top: 10px;
+	p {
+		color: red;
+	}
+	.power4-text {
+		font-size: 25px;
+		span {
+			background: yellow;
+			font-size: $fs;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.power5 {
+// Математические вычисления 
+	width: 300 *100% / 960;
+	background: pink;
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// &=повторяет названия родителя (.link=&)
+.link {
+	font-size: 20px;
+	text-decoration: none;
+	border: 1px solid #000;
+	display: block;
+	margin: 10px;
+	background: green;
+	&:hover {
+		font-size: 20px;
+		background: yellow;
+	}
+}
+
+
+
+
+
+
+
+
+

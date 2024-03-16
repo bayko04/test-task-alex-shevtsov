@@ -1,0 +1,76 @@
+.header {
+    padding: 43px 0 0 0;
+    z-index: 1000;
+    animation: toDown 0.8s ease;
+
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__link {
+        margin: 0 30px 0 0;
+
+        &:last-child {
+            margin: 0;
+        }
+
+        & a {
+            @extend %montsT3;
+        }
+    }
+
+    &__tel {
+        cursor: pointer;
+        position: relative;
+
+        & a {
+            @extend %montsT2;
+        }
+
+        &:before {
+            content: "";
+            background: url("../../images/tel.png") no-repeat;
+            width: 42px;
+            height: 42px;
+            position: absolute;
+            top: 0;
+            left: -55px;
+        }
+    }
+
+    &__burger-and-tel {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header__link {
+        & a {
+            font-size: 12px;
+        }
+    }
+
+    .header__tel {
+        font-size: 14px;
+    }
+}
+@media (max-width: 992px) {
+    .header__list {
+        display: none;
+    }
+
+    .header__tel {
+        display: none;
+    }
+
+    .header__burger-and-tel {
+        display: flex;
+        gap: 12px;
+    }
+}

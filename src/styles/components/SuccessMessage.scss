@@ -1,0 +1,50 @@
+.success-message {
+    &__title {
+        @extend %ralewayH2;
+        font-size: 50px;
+        line-height: 74px;
+        margin: 90px 0 98px 0;
+        text-align: center;
+    }
+
+    &__description {
+        @extend %ralewayH2;
+        font-size: 40px;
+        line-height: 58px;
+        text-align: center;
+    }
+
+    &__logo {
+        position: absolute;
+        right: 73px;
+        bottom: 80px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .success-message {
+        &__title {
+            font-size: 34px;
+            line-height: 40px;
+        }
+
+        &__description {
+            font-size: 24px;
+            line-height: 30px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .success-message {
+        &__title {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        &__description {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+}
